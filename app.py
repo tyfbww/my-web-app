@@ -64,7 +64,7 @@ if is_licensed or days_left >= 0:
   if uploaded_file is not None:
     # 读取数据
     df = (
-        pd.read_csv(uploaded_file)
+        pd.read_excel(uploaded_file, engine='openpyxl')
         if uploaded_file.name.endswith(".csv")
         else pd.read_excel(uploaded_file)
     )
